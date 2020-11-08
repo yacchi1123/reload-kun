@@ -1,0 +1,28 @@
+body {
+  width: 150px;
+}
+
+p {
+  margin: 0
+}
+
+section {
+  margin: 10px auto 0;
+}
+
+.setting__title {
+  font-weight: bold;
+}
+
+.setting__input-area {
+  margin-top: 5px;
+}
+
+.setting__time-unit {
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 10px;
+  width: 150px;
+}

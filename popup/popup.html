@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="setting">
+      <section class="setting__time">
+        <p class="setting__title">リロード間隔</p>
+        <div class="setting__input-area">
+          <input id="setting-time" class="setting__time-input" type="number" placeholder="リロード間隔を入力" />
+          <form id="setting-unit" class="setting__time-unit">
+            <input id="sec" class="setting__time-radio" type="radio" name="unit" value="sec" /><label for="sec">秒</label>
+            <input id="min" class="setting__time-radio" type="radio" name="unit" value="min" /><label for="min">分</label>
+            <input id="hour" class="setting__time-radio" type="radio" name="unit" value="hour" /><label for="hour">時間</label>
+          </form>
+        </div>
+      </section>
+      <button id="add-btn">登録</button>
+      <button id="cancel-btn">解除</button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

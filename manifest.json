@@ -1,0 +1,20 @@
+{
+  "name": "リロード君",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "reload for spaecific website",
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": [
+      "content.js"
+    ]
+  }],
+  "browser_action": {
+    "default_icon": "./img/reload-icon-32.png",
+    "default_title": "リロード君",
+     "default_popup": "./popup/popup.html"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
