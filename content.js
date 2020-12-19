@@ -25,6 +25,7 @@ chrome.runtime.onMessage.addListener((msgJson) => {
   if (msgObj.status === 'add') {
     const time = Number.parseFloat(msgObj.time);
     const unit = msgObj.unit;
+    const url = location.href;
     let timer;
     if (unit === 'sec') {
       // s => ms
@@ -37,10 +38,12 @@ chrome.runtime.onMessage.addListener((msgJson) => {
       timer = time * 60 * 60 * 1000;
     }
     localStorage.setItem('timer', timer);
+    localStorage.setItem('url', url);
     setTimer(timer);
   } else if (msgObj.status === 'cancel') {
     cancelTimer();
     localStorage.removeItem('timer');
+    localStorage.removeItem('url');
   }
 
   return;
@@ -48,8 +51,9 @@ chrome.runtime.onMessage.addListener((msgJson) => {
 });
 
 window.onload = () => {
+  const url = localStorage.getItem('url');
   const timer = localStorage.getItem('timer');
-  if (!timer) {
+  if (!timer || url !== location.href) {
     return;
   }
   setTimer(timer);
